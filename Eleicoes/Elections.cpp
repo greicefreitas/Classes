@@ -27,17 +27,21 @@ int main()
 		}
 	}
 
+	cout << "Candidate" << "\t" << "Number of Votes" << "\t" << "Percentage" << endl;
+
 	for (int i = 0; i < 5; i++) {
 		cand[i].PercVotes = ((float)(cand[i].NumberVotes) / total_votes)*100;
-		cout << cand[i].CandidateName << endl;
-		cout << "Number of votes: " << cand[i].NumberVotes << endl;
-		cout << "Percentage of votes: " << cand[i].PercVotes << "%" << endl;
+		cout << cand[i].CandidateName << "\t\t\t";
+		cout <<  cand[i].NumberVotes << "\t\t";
+		cout <<  cand[i].PercVotes << "%" << endl;
 	}
 	cout << "-------------------" << endl;
-	cout << "The winner is ... " << endl ;
-	cout << cand[winner[0]].CandidateName << endl;
-	cout << "Number of votes: " << cand[winner[0]].NumberVotes << endl;
-	cout << "Percentage of votes: " << cand[winner[0]].PercVotes << "%" << endl;
+	cout << "THE WINNER IS ... \n" << endl ;
+
+	cout << "Candidate" << "\t" << "Number of Votes" << "\t" << "Percentage" << endl;
+	cout << cand[winner[0]].CandidateName << "\t\t\t";
+	cout << cand[winner[0]].NumberVotes << "\t\t";
+	cout << cand[winner[0]].PercVotes << "%" << endl;
 
 	return 0;
 }
