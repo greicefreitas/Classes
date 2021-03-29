@@ -14,16 +14,16 @@ int main()
 {
 	vector<Candidate> cand(5); //Initializing 5 candidates!
 	int total_votes(0);
-	vector<int> winner(2,0);
+	Candidate* win = &cand[1];
+	int winner(0);
 
 	for (int i = 0; i < 5; i++) 
 	{
 		cand[i].EnterCandidate();
 		total_votes += cand[i].NumberVotes;
-		if (cand[i].NumberVotes > winner[1])
+		if (cand[i].NumberVotes > winner)
 		{
-			winner[0] = i;
-			winner[1] = cand[i].NumberVotes;
+			win = &cand[i];
 		}
 	}
 
@@ -39,9 +39,10 @@ int main()
 	cout << "THE WINNER IS ... \n" << endl ;
 
 	cout << "Candidate" << "\t" << "Number of Votes" << "\t" << "Percentage" << endl;
-	cout << cand[winner[0]].CandidateName << "\t\t\t";
-	cout << cand[winner[0]].NumberVotes << "\t\t";
-	cout << cand[winner[0]].PercVotes << "%" << endl;
+	cout << (*win).CandidateName << "\t\t\t";
+	cout << (*win).NumberVotes << "\t\t";
+	cout << (*win).PercVotes << "%" << endl;
+
 
 	return 0;
 }
